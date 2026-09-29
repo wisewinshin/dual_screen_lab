@@ -1,17 +1,24 @@
-# dual_screen_lab
+# Fold Mood Clock
 
-A new Flutter project.
+폴더블을 `/\\` 형태로 세웠을 때 내부 화면은 시계 또는 무드 라이트로, 커버 화면은
+화면의 긴 방향에 맞춘 가로형 시계로 사용하는 Flutter 실험 앱입니다. 커버가
+세로 좌표로 전달되는 기기에서는 시계 화면만 자동으로 90도 회전합니다.
 
-## Getting Started
+## 실행
 
-This project is a starting point for a Flutter application.
+1. 듀얼 스크린 모드를 지원하는 폴더블에서 앱을 실행합니다.
+2. 기기를 펼치거나 `/\\` 형태로 세웁니다.
+3. **듀얼 스크린 시작**을 누르고 Android 시스템 확인창을 승인합니다.
+4. **무드등 모드**와 **시계 모드** 버튼으로 내부 화면을 전환합니다.
+5. 무드등 화면을 탭하면 조작 패널을 숨기거나 다시 표시할 수 있습니다.
 
-A few resources to get you started if this is your first Flutter project:
+앱 실행 중에는 두 화면이 꺼지지 않도록 유지되며 내부 화면 밝기는 최대로
+설정됩니다. 앱을 닫으면 시스템 밝기 설정으로 돌아갑니다.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 지원 범위
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+커버 화면 동시 출력은 Jetpack WindowManager의
+`OPERATION_PRESENT_ON_AREA` 기능을 사용합니다. 이 기능을 제공하지 않는 기기나
+OS에서는 앱에 지원 불가 상태가 표시됩니다. 단순히 폴더블이라는 이유만으로 두
+패널을 동시에 켤 수 있는 것은 아니며, 제조사가 해당 Android 기능을 구현해야
+합니다.
